@@ -80,7 +80,7 @@ var f2 = function(a, b) {
 console.log("f:" + typeof(f));
 console.log("f2:" + typeof(f2));
 
-console.log("==== 원시타입과 원시 타입을 Wrapper 객체는 구분없이 사용할 수 있다. =================================");
+console.log("==== 원시타입과 원시 타입의 Wrapper 객체는 구분없이 사용할 수 있다. =================================");
 console.log(i + i2);
 console.log(s + s2);
 
