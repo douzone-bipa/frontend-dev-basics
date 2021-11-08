@@ -58,14 +58,3 @@ console.log(o5["0"], o5[1], o5.length);
 for(prop in o5) {
     console.log(prop);
 }
-
-console.log("========")
-a5.forEach(function(e, index){
-    console.log(index + ":" + e);
-});
-
-Array.prototype.forEach.call(o5, function(e, index){
-    console.log(index + ":" + e);
-});
-
-
