@@ -3,9 +3,9 @@
 
 var tabBox = {
 	init: function() {
-		window.addEventListener("load", this.onWindowLoad.bind(this));
+		window.addEventListener("load", this._onWindowLoad.bind(this));
 	},
-	onTabClicked: function() {
+	_onTabClicked: function() {
 		// unselect
 		var lisSelected = document.getElementsByClassName("selected");
 		(lisSelected.length === 1) && (lisSelected[0].className = '');
@@ -13,13 +13,13 @@ var tabBox = {
 		// select
 		this.className = "selected";
 	},
-	onWindowLoad: function() {
+	_onWindowLoad: function() {
 		var divTabBox = document.getElementsByClassName("tab-box")[0];
 		var ul = divTabBox.childNodes[1];
 
 		var liTabs = ul.getElementsByTagName("li");
 		for(var i = 0; i < liTabs.length; i++) {
-			liTabs[i].addEventListener("click", this.onTabClicked);
+			liTabs[i].addEventListener("click", this._onTabClicked);
 		}		
 	}
 }
