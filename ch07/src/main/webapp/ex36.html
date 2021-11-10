@@ -5,32 +5,9 @@
 <title>sample1</title>
 <link href='image-viewer.css' type='text/css' rel="stylesheet"/>
 <script type="text/javascript" src="./jquery/jquery-3.6.0.js"></script>
-<!--
 <script type="text/javascript" src="image-viewer.js"></script>
 <script>
-ImageViewer.init();
-</script>
--->
-
-<script type="text/javascript">
-var images = [ 
-	"국화:Chrysanthemum.jpg", 
-	"사막:Desert.jpg", 
-	"수국:Hydrangeas.jpg", 
-	"해파리:Jellyfish.jpg", 
-	"코알라:Koala.jpg", 
-	"등대:Lighthouse.jpg", 
-	"펭귄:Penguins.jpg", 
-	"툴립:Tulips.jpg"
-];
-
-$(function(){
-	$("#btn-change").click(function(){
-		// 랜덤 변수 
-		var result = Math.floor(Math.random() * images.length);  // 0 ~ 7
-		console.log(result);
-	});
-});
+	imageViewer.init();
 </script>
 </head>
 <body>

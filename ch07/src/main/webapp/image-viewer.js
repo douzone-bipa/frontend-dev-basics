@@ -1,14 +1,13 @@
 var imageViewer = {
 	init: function(){
-		var that = this;
-		$(function(){
-			$("#btn-change").click(that._changeImage.bind(that));
-			$("#btn-sildeshow").click(that._slideShow.bind(that));
-			$(".image-viewer img").dblclick(that._consoleLog);
+		$(function() {
+			$("#btn-change").click(this._changeImage.bind(this));
+			$("#btn-slideshow").click(this._slideShow.bind(this));
+			$(".image-viewer img").dblclick(this._consoleLog);
 			
 			// 첫 번째 이미지 선택
-			that._changeImage();
-		});
+			this._changeImage();
+		}.bind(this));
 	},
 	_consoleLog: function(){
 		var name = $(this).attr("alt");
@@ -23,24 +22,26 @@ var imageViewer = {
 			this._intervalId = null;
 			
 			// 2. 버튼텍스트 => 슬라이드쇼 시작
-			$("#btn-sildeshow").text("슬라이드쇼 시작");
+			$("#btn-slideshow").text("슬라이드쇼 시작");
 		} else {
 			/* 슬라이드쇼가 중지 상태 */
 			
 			// 1. 타이머 시작
-			var that = this;
-			that._intervalId = setInterval(function(){
-				that._changeImage();
-			}, 1000);
-			// that._intervalId = setInterval(that._changeImage.bind(that), 1000);
+			this._intervalId = setInterval(function(){
+				this._changeImage();
+			}.bind(this), 1000);
+			
 			
 			// 2. 버튼텍스트 => 슬라이드쇼 중지 
-			$("#btn-sildeshow").text("슬라이드쇼 중지");
+			$("#btn-slideshow").text("슬라이드쇼 중지");
 		}
 	},
 	_changeImage: function(){
-		var index = Math.floor(Math.random() * this._images.length);
-		var info = this._images[index];
+		do {
+			var index = Math.floor(Math.random() * this._images.length);
+			var info = this._images[index];
+			console.log($(".image-viewer img").attr("alt"), info.name);
+		} while($(".image-viewer img").attr("alt") === info.name);
 		
 		$(".image-viewer img").attr({
 			src: "images/" + info.file,
