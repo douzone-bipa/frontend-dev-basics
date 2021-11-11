@@ -71,8 +71,7 @@
 		    <groupId>com.sun.istack</groupId>
 		    <artifactId>istack-commons-runtime</artifactId>
 		    <version>4.0.0</version>
-		</dependency>
-				
+		</dependency>				
 								
 		<!-- Servlet -->
 		<dependency>
